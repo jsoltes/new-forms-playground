@@ -9,37 +9,25 @@ public class Menu implements java.io.Serializable
 
    static final long serialVersionUID = 1L;
 
-   private boolean leave = false;
-   private boolean timesheet = false;
+   private java.util.List<java.lang.String> items;
 
    public Menu()
    {
    }
 
-   public boolean isLeave()
+   public java.util.List<java.lang.String> getItems()
    {
-      return this.leave;
+      return this.items;
    }
 
-   public void setLeave(boolean leave)
+   public void setItems(java.util.List<java.lang.String> items)
    {
-      this.leave = leave;
+      this.items = items;
    }
 
-   public boolean isTimesheet()
+   public Menu(java.util.List<java.lang.String> items)
    {
-      return this.timesheet;
-   }
-
-   public void setTimesheet(boolean timesheet)
-   {
-      this.timesheet = timesheet;
-   }
-
-   public Menu(boolean leave, boolean timesheet)
-   {
-      this.leave = leave;
-      this.timesheet = timesheet;
+      this.items = items;
    }
 
 }
