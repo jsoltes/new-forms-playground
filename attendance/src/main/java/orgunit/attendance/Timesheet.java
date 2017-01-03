@@ -15,12 +15,12 @@ public class Timesheet implements java.io.Serializable
    @javax.persistence.SequenceGenerator(sequenceName = "TIMESHEET_ID_SEQ", name = "TIMESHEET_ID_GENERATOR")
    private java.lang.Long id;
 
-   @org.kie.api.definition.type.Label("Line")
-   @javax.persistence.ManyToOne(cascade = { javax.persistence.CascadeType.ALL }, fetch = javax.persistence.FetchType.EAGER)
-   private orgunit.attendance.TimesheetLine line;
+   @org.kie.api.definition.type.Label("Is Editable")
+   private java.lang.Boolean isEditable;
 
-   @org.kie.api.definition.type.Label(value = "Is Editable")
-   private java.lang.Boolean isEditable = true;
+   @javax.persistence.OneToMany(cascade = { javax.persistence.CascadeType.ALL }, fetch = javax.persistence.FetchType.EAGER)
+   @org.kie.api.definition.type.Label(value = "Line")
+   private java.util.List<orgunit.attendance.TimesheetLine> line;
 
    public Timesheet()
    {
@@ -36,16 +36,6 @@ public class Timesheet implements java.io.Serializable
       this.id = id;
    }
 
-   public orgunit.attendance.TimesheetLine getLine()
-   {
-      return this.line;
-   }
-
-   public void setLine(orgunit.attendance.TimesheetLine line)
-   {
-      this.line = line;
-   }
-
    public java.lang.Boolean getIsEditable()
    {
       return this.isEditable;
@@ -56,12 +46,22 @@ public class Timesheet implements java.io.Serializable
       this.isEditable = isEditable;
    }
 
-   public Timesheet(java.lang.Long id, orgunit.attendance.TimesheetLine line,
-         java.lang.Boolean isEditable)
+   public java.util.List<orgunit.attendance.TimesheetLine> getLine()
+   {
+      return this.line;
+   }
+
+   public void setLine(java.util.List<orgunit.attendance.TimesheetLine> line)
+   {
+      this.line = line;
+   }
+
+   public Timesheet(java.lang.Long id, java.lang.Boolean isEditable,
+         java.util.List<orgunit.attendance.TimesheetLine> line)
    {
       this.id = id;
-      this.line = line;
       this.isEditable = isEditable;
+      this.line = line;
    }
 
 }
