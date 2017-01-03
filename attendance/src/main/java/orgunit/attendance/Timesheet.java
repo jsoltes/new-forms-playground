@@ -15,9 +15,12 @@ public class Timesheet implements java.io.Serializable
    @javax.persistence.SequenceGenerator(sequenceName = "TIMESHEET_ID_SEQ", name = "TIMESHEET_ID_GENERATOR")
    private java.lang.Long id;
 
+   @org.kie.api.definition.type.Label("Line")
    @javax.persistence.ManyToOne(cascade = { javax.persistence.CascadeType.ALL }, fetch = javax.persistence.FetchType.EAGER)
-   @org.kie.api.definition.type.Label(value = "Line")
    private orgunit.attendance.TimesheetLine line;
+
+   @org.kie.api.definition.type.Label(value = "Is Editable")
+   private java.lang.Boolean isEditable = true;
 
    public Timesheet()
    {
@@ -43,10 +46,22 @@ public class Timesheet implements java.io.Serializable
       this.line = line;
    }
 
-   public Timesheet(java.lang.Long id, orgunit.attendance.TimesheetLine line)
+   public java.lang.Boolean getIsEditable()
+   {
+      return this.isEditable;
+   }
+
+   public void setIsEditable(java.lang.Boolean isEditable)
+   {
+      this.isEditable = isEditable;
+   }
+
+   public Timesheet(java.lang.Long id, orgunit.attendance.TimesheetLine line,
+         java.lang.Boolean isEditable)
    {
       this.id = id;
       this.line = line;
+      this.isEditable = isEditable;
    }
 
 }
