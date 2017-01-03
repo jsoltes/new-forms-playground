@@ -48,34 +48,8 @@
 	function taskFormValidator() {
 		var i=0;
 		var myInputs = new Array();
-					myInputs[i] = document.getElementById("menuItem");
-					i++;
-					myInputs[i] = document.getElementById("isTimesheetEditable");
-					i++;
-					myInputs[i] = document.getElementById("isEndOfMonth");
-					i++;
-
 
 		var j=0;
-						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
-							alert("Please enter valid menuItem");
-							myInputs[j].focus();
-							return false;
-						}
-					j++;
-						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
-							alert("Please enter valid isTimesheetEditable");
-							myInputs[j].focus();
-							return false;
-						}
-					j++;
-						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
-							alert("Please enter valid isEndOfMonth");
-							myInputs[j].focus();
-							return false;
-						}
-					j++;
-
 		return true;
 	}
 </script>
@@ -226,28 +200,36 @@
 </style>
 <div id="container">
 	<div id="header">
-		New Process Instance: /attendance/src/main/resources/orgunit/attendance.attendance-tracking
+		User Task Form: attendance-tracking.approveLeave
 	</div>
 	<div id="content">
-	    <input type="hidden" name="processId" value="${process.id}"/>
+	    <input type="hidden" name="taskId" value="${task.id}"/>
 		<fieldset>
-            <legend>Process inputs</legend>
-                            		<label for="name">menuItem</label>
-                            		<div class="div_texbox">
-                              		<input name="menuItem" type="text" class="textbox" id="menuItem" value="" />
-                            		</div>
-              	
-                            		<label for="name">isTimesheetEditable</label>
-                            		<div class="div_checkbox">
-                              		<input name="isTimesheetEditable" type="checkbox" class="checkbox" id="isTimesheetEditable" value="true" />
-                            		</div>
-              	
-                            		<label for="name">isEndOfMonth</label>
-                            		<div class="div_checkbox">
-                              		<input name="isEndOfMonth" type="checkbox" class="checkbox" id="isEndOfMonth" value="true" />
-                            		</div>
-              	
+            <legend>Task Info</legend>
+            	<label for="name">Owners</label>
+            	<div class="div_checkbox">
+            	
+            	</div>
+            	<label for="name">Actor ID</label>
+            	<div class="div_checkbox"></div>
+            	<label for="name">Group</label>
+            	<div class="div_checkbox"></div>
+            	<label for="name">Skippable</label>
+            	<div class="div_checkbox">true</div>
+            	<label for="name">Priority</label>
+            	<div class="div_checkbox"></div>
+            	<label for="name">Comment</label>
+            	<div class="div_checkbox"></div>
+            <div class="clear"></div>
+          </fieldset>
 
+		<fieldset>
+            <legend>Task Inputs</legend>
+            <div class="clear"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Task Outputs</legend>
           </fieldset>
 	</div>
 	<div id="footer">

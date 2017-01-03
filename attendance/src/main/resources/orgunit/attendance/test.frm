@@ -1,0 +1,1 @@
+{"id":"39f677be-9d81-4624-a188-4569087f4b8f","name":"test","model":{"formModelType":"org.kie.workbench.common.forms.model.DefaultFormModel"},"fields":[]}
