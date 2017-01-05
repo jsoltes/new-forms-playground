@@ -44,12 +44,14 @@ public class Timesheet implements java.io.Serializable
    {
       this.line = line;
    }
-
+   
    public Timesheet(java.lang.Long id,
-         java.util.List<orgunit.attendance.TimesheetLine> line)
+         java.util.List<orgunit.attendance.TimesheetLine> line,
+         java.lang.Boolean isEditable)
    {
       this.id = id;
       this.line = line;
+      this.isEditable = isEditable;
    }
 
 }
