@@ -19,8 +19,6 @@ public class Timesheet implements java.io.Serializable
    @org.kie.api.definition.type.Label("Line")
    private java.util.List<orgunit.attendance.TimesheetLine> line;
 
-   public static java.lang.Boolean isEditable = true;
-
    public Timesheet()
    {
    }
