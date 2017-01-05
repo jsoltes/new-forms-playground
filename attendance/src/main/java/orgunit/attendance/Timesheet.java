@@ -21,9 +21,6 @@ public class Timesheet implements java.io.Serializable
 
    public static java.lang.Boolean isEditable = true;
 
-   @org.kie.api.definition.type.Label(value = "Submit")
-   private java.lang.Boolean submit;
-
    public Timesheet()
    {
    }
@@ -48,23 +45,11 @@ public class Timesheet implements java.io.Serializable
       this.line = line;
    }
 
-   public java.lang.Boolean getSubmit()
-   {
-      return this.submit;
-   }
-
-   public void setSubmit(java.lang.Boolean submit)
-   {
-      this.submit = submit;
-   }
-
    public Timesheet(java.lang.Long id,
-         java.util.List<orgunit.attendance.TimesheetLine> line,
-         java.lang.Boolean submit)
+         java.util.List<orgunit.attendance.TimesheetLine> line)
    {
       this.id = id;
       this.line = line;
-      this.submit = submit;
    }
 
 }
