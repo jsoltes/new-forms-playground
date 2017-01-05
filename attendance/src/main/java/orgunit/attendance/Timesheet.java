@@ -49,7 +49,6 @@ public class Timesheet implements java.io.Serializable
    {
       this.id = id;
       this.line = line;
-      this.isEditable = isEditable;
    }
 
 }
