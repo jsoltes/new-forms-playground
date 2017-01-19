@@ -15,16 +15,13 @@ public class Product implements java.io.Serializable
    @javax.persistence.SequenceGenerator(sequenceName = "PRODUCT_ID_SEQ", name = "PRODUCT_ID_GENERATOR")
    private java.lang.Long id;
 
-   @org.kie.api.definition.type.Label(value = "name")
+   @org.kie.api.definition.type.Label("name")
    private java.lang.String name;
 
-   @org.kie.api.definition.type.Label(value = "price")
+   @org.kie.api.definition.type.Label("price")
    private float price;
 
-   @org.kie.api.definition.type.Label(value = "is available")
-   private boolean isAvailable;
-
-   @org.kie.api.definition.type.Label(value = "amount")
+   @org.kie.api.definition.type.Label("amount")
    private int amount;
 
    public Product()
@@ -61,16 +58,6 @@ public class Product implements java.io.Serializable
       this.price = price;
    }
 
-   public boolean isIsAvailable()
-   {
-      return this.isAvailable;
-   }
-
-   public void setIsAvailable(boolean isAvailable)
-   {
-      this.isAvailable = isAvailable;
-   }
-
    public int getAmount()
    {
       return this.amount;
@@ -81,13 +68,11 @@ public class Product implements java.io.Serializable
       this.amount = amount;
    }
 
-   public Product(java.lang.Long id, java.lang.String name, float price,
-         boolean isAvailable, int amount)
+   public Product(java.lang.Long id, java.lang.String name, float price, int amount)
    {
       this.id = id;
       this.name = name;
       this.price = price;
-      this.isAvailable = isAvailable;
       this.amount = amount;
    }
 
