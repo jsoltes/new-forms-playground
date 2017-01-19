@@ -15,9 +15,9 @@ public class ProductList implements java.io.Serializable
    @javax.persistence.SequenceGenerator(sequenceName = "PRODUCTLIST_ID_SEQ", name = "PRODUCTLIST_ID_GENERATOR")
    private java.lang.Long id;
 
-   @javax.persistence.ManyToOne(cascade = { javax.persistence.CascadeType.ALL }, fetch = javax.persistence.FetchType.EAGER)
-   @org.kie.api.definition.type.Label(value = "product")
-   private orgunit.e_shop.Product product;
+   @javax.persistence.OneToMany(cascade = { javax.persistence.CascadeType.ALL }, fetch = javax.persistence.FetchType.EAGER)
+   @org.kie.api.definition.type.Label(value = "products")
+   private java.util.List<orgunit.e_shop.ProductList> products;
 
    public ProductList()
    {
@@ -33,20 +33,21 @@ public class ProductList implements java.io.Serializable
       this.id = id;
    }
 
-   public orgunit.e_shop.Product getProduct()
+   public java.util.List<orgunit.e_shop.ProductList> getProducts()
    {
-      return this.product;
+      return this.products;
    }
 
-   public void setProduct(orgunit.e_shop.Product product)
+   public void setProducts(java.util.List<orgunit.e_shop.ProductList> products)
    {
-      this.product = product;
+      this.products = products;
    }
 
-   public ProductList(java.lang.Long id, orgunit.e_shop.Product product)
+   public ProductList(java.lang.Long id,
+         java.util.List<orgunit.e_shop.ProductList> products)
    {
       this.id = id;
-      this.product = product;
+      this.products = products;
    }
 
 }
