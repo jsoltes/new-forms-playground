@@ -21,9 +21,6 @@ public class Product implements java.io.Serializable
    @org.kie.api.definition.type.Label("price")
    private float price;
 
-   @org.kie.api.definition.type.Label("amount")
-   private int amount;
-
    public Product()
    {
    }
@@ -58,22 +55,11 @@ public class Product implements java.io.Serializable
       this.price = price;
    }
 
-   public int getAmount()
-   {
-      return this.amount;
-   }
-
-   public void setAmount(int amount)
-   {
-      this.amount = amount;
-   }
-
-   public Product(java.lang.Long id, java.lang.String name, float price, int amount)
+   public Product(java.lang.Long id, java.lang.String name, float price)
    {
       this.id = id;
       this.name = name;
       this.price = price;
-      this.amount = amount;
    }
 
 }
