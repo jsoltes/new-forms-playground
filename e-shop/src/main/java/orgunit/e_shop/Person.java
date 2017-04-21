@@ -5,64 +5,53 @@ package orgunit.e_shop;
  */
 
 @javax.persistence.Entity
-public class Person implements java.io.Serializable
-{
+public class Person implements java.io.Serializable {
 
-   static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-   @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "PERSON_ID_GENERATOR")
-   @javax.persistence.Id
-   @javax.persistence.SequenceGenerator(sequenceName = "PERSON_ID_SEQ", name = "PERSON_ID_GENERATOR")
-   private java.lang.Long id;
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "PERSON_ID_GENERATOR")
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(sequenceName = "PERSON_ID_SEQ", name = "PERSON_ID_GENERATOR")
+	private java.lang.Long id;
 
-   @javax.persistence.ManyToOne(cascade = { javax.persistence.CascadeType.ALL }, fetch = javax.persistence.FetchType.EAGER)
-   @org.kie.api.definition.type.Label(value = "name")
-   private orgunit.e_shop.Name name;
+	private String name;
 
-   @javax.persistence.ManyToOne(cascade = { javax.persistence.CascadeType.ALL }, fetch = javax.persistence.FetchType.EAGER)
-   @org.kie.api.definition.type.Label(value = "address")
-   private orgunit.e_shop.Address address;
+	@javax.persistence.ManyToOne(cascade = {javax.persistence.CascadeType.ALL}, fetch = javax.persistence.FetchType.EAGER)
+	@org.kie.api.definition.type.Label("address")
+	private orgunit.e_shop.Address address;
 
-   public Person()
-   {
-   }
+	public Person() {
+	}
 
-   public java.lang.Long getId()
-   {
-      return this.id;
-   }
+	public java.lang.Long getId() {
+		return this.id;
+	}
 
-   public void setId(java.lang.Long id)
-   {
-      this.id = id;
-   }
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
 
-   public orgunit.e_shop.Name getName()
-   {
-      return this.name;
-   }
+	public orgunit.e_shop.Address getAddress() {
+		return this.address;
+	}
 
-   public void setName(orgunit.e_shop.Name name)
-   {
-      this.name = name;
-   }
+	public void setAddress(orgunit.e_shop.Address address) {
+		this.address = address;
+	}
 
-   public orgunit.e_shop.Address getAddress()
-   {
-      return this.address;
-   }
+	public java.lang.String getName() {
+		return this.name;
+	}
 
-   public void setAddress(orgunit.e_shop.Address address)
-   {
-      this.address = address;
-   }
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
 
-   public Person(java.lang.Long id, orgunit.e_shop.Name name,
-         orgunit.e_shop.Address address)
-   {
-      this.id = id;
-      this.name = name;
-      this.address = address;
-   }
+	public Person(java.lang.Long id, java.lang.String name,
+			orgunit.e_shop.Address address) {
+		this.id = id;
+		this.name = name;
+		this.address = address;
+	}
 
 }
